@@ -1,21 +1,21 @@
-FROM node:18
+FROM node
 
 # Create app directory
-WORKDIR /usr/assignment-4-api
+WORKDIR /usr/next-altin
 
 # Install NEXT.js dependencies
-COPY package.json /usr/assignment-4-api/
+COPY package.json /usr/next-altin/
 
 # Build NEXT.js project
 RUN npm install
 
-COPY . /usr/assignment-4-api/
+COPY . /usr/next-altin/
 
 # Build NEXT.js project
 RUN npm run build
 
 # Copy NEXT.js build artifacht to working directory
-COPY . /usr/assignment-4-api/
+COPY . /usr/next-altin/
 
 # Expose port 3000
 EXPOSE 3000
