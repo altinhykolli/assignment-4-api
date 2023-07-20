@@ -20,7 +20,7 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
     - name: Install dependencies
       id: npm-install
-      working-directory: api
+      working-directory: next-altin
       run: |
         npm install
     # - name: Run unit tests
@@ -29,7 +29,7 @@ jobs:
     #     npm run test
     - name: Build, tag, and push the image to Amazon ECR
       id: build-image
-      working-directory: api
+      working-directory: next-altin
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: "altin-assignment-4"
